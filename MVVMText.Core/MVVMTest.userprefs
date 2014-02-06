@@ -1,0 +1,11 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/appdevelopment/Desktop/Github/MVVMTest/MVVMText.Core/MvvmTest.Core/API/FakeService.cs" line="19" column="23" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MvvmTest.Android MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Debug="95ceae0d" />
+</Properties>

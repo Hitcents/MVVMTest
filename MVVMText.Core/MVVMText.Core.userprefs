@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MvvmTest.Android/IDrivenActivity.cs">
+    <Files>
+      <File FileName="MvvmTest.Android/VMDrivenActivity.cs" Line="23" Column="4" />
+      <File FileName="MvvmTest.Android/IDrivenActivity.cs" Line="28" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MvvmTest.Android MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Debug="95ceae0d" />
+</Properties>
