@@ -101,9 +101,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="..\..\..\Bind\src\Bind.cs">
-      <Link>Bind.cs</Link>
-    </Compile>
     <Compile Include="Controllers\InterfaceDrivenController.cs" />
     <Compile Include="Controllers\InterfaceDrivenController.designer.cs">
       <DependentUpon>InterfaceDrivenController.cs</DependentUpon>
@@ -115,6 +112,9 @@
     <Compile Include="Controllers\ViewModelDrivenController.cs" />
     <Compile Include="Controllers\ViewModelDrivenController.designer.cs">
       <DependentUpon>ViewModelDrivenController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\MvvmTest.Core\Bind.cs">
+      <Link>Bind.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

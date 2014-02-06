@@ -38,6 +38,7 @@
     <Compile Include="02\LoginViewModel.cs" />
     <Compile Include="01\ILoginView.cs" />
     <Compile Include="01\LoginViewModel.cs" />
+    <Compile Include="Bind.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
