@@ -15,7 +15,14 @@ namespace MvvmTest.Android
     [Activity(Label = "IDrivenActivity")]			
 	public class IDrivenActivity : Activity, ILoginView
     {
-		public event EventHandler Login;
+        public event EventHandler Login
+        {
+            add { _login += value; }
+            remove { _login -= value; }
+        }
+
+        private EventHandler _login;
+        private EditText _username, _password;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -24,37 +31,25 @@ namespace MvvmTest.Android
 			SetContentView(Resource.Layout.IDrivenLayout);
 
 			var viewModel = new LoginViewModel();
-			viewModel.View = this;
+			//viewModel.View = this;
 
 			var login = FindViewById<Button>(Resource.Id.interfaceLogin);
-			var userName = FindViewById<EditText>(Resource.Id.interfaceUsername);
-			var password = FindViewById<EditText>(Resource.Id.interfacePassword);
+			_username = FindViewById<EditText>(Resource.Id.interfaceUsername);
+            _password = FindViewById<EditText>(Resource.Id.interfacePassword);
 
-			userName.TextChanged += (sender, e) =>
-			{
-				Username = userName.Text;
-			};
-			password.TextChanged += (sender, e) =>
-			{
-				Password = password.Text;
-			};
-
-			login.Click += (sender, e) =>
-			{
-				Login(sender,e);
-			};
+			login.Click += _login;
         }
 
 		public string Username
 		{
-			get;
-			set;
+            get { return _username.Text; }
+            set { _username.Text = value; }
 		}
 
 		public string Password
 		{
-			get;
-			set;
+            get { return _password.Text; }
+            set { _password.Text = value; }
 		}
     }
 }

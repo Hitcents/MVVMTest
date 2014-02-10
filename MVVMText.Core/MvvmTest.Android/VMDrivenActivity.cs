@@ -16,6 +16,9 @@ namespace MvvmTest.Android
     [Activity(Label = "VMDrivenActivity")]			
     public class VMDrivenActivity : Activity
     {
+        private readonly LoginViewModel _viewModel = new LoginViewModel();
+        private EditText _username, _password;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -23,23 +26,19 @@ namespace MvvmTest.Android
 			SetContentView(Resource.Layout.ViewModelBind);
 
 			var login = FindViewById<Button>(Resource.Id.loginViewModel);
-			var username = FindViewById<EditText>(Resource.Id.usernameViewModel);
-			var password = FindViewById<EditText>(Resource.Id.passwordViewModel);
+			_username = FindViewById<EditText>(Resource.Id.usernameViewModel);
+			_password = FindViewById<EditText>(Resource.Id.passwordViewModel);
 
-			var viewModel = new LoginViewModel();
+			Binding.Create(() => _username.Text == _viewModel.UserName);
+			Binding.Create(() => _password.Text == _viewModel.Password);
 
-			Binding.Create(() => username.Text == viewModel.UserName);
-			Binding.Create(() => password.Text == viewModel.Password);
+            //_username.TextChanged += (sender, e) => Binding.Invalidate(() => _username.Text);
+            //_password.TextChanged += (sender, e) => Binding.Invalidate(() => _password.Text);
 
-			username.TextChanged += (sender, e) => Binding.Invalidate(() => username.Text);
-			password.TextChanged += (sender, e) => Binding.Invalidate(() => password.Text);
-
-			login.Click += (sender, e) =>
+			login.Click += async (sender, e) =>
 			{
-				viewModel.Login();
+				await _viewModel.Login();
 			};
-
-
         }
     }
 }

@@ -12,14 +12,14 @@ namespace MvvmTest.Core
         {
         }
 
-		public async Task Login(string username, string password)
+		public Task Login(string username, string password)
 		{
-			await SleepTask();
-
 			if (string.IsNullOrEmpty(username))
 				throw new Exception("Username cannot be empty!");
 			if (string.IsNullOrEmpty(password))
 				throw new Exception("Password cannot be empty!");
+
+            return Task.FromResult(true);
 		}
 
 		private async Task SleepTask()
